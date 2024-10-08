@@ -8,6 +8,7 @@
     "dev": "npm run db:generate && ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/server.ts",
     "build": "npm run db:generate && tsc",
     "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
     "db:generate": "prisma generate --schema=./src/prisma/schema.prisma",
     "db:migrate": "prisma migrate dev --schema=./src/prisma/schema.prisma",
     "db:seed": "ts-node -r tsconfig-paths/register src/db/seed.ts",

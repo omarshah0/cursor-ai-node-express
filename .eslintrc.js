@@ -14,6 +14,54 @@ module.exports = {
         ts: 'never',
       },
     ],
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        'newlines-between': 'always',
+        alphabetize: { order: 'asc', caseInsensitive: true },
+        pathGroups: [
+          {
+            pattern: 'express',
+            group: 'builtin',
+            position: 'before',
+          },
+          {
+            pattern: '@/**',
+            group: 'internal',
+            position: 'after',
+          },
+          {
+            pattern: '@/routes/**',
+            group: 'internal',
+            position: 'after',
+          },
+          {
+            pattern: '@/generated/client',
+            group: 'internal',
+            position: 'after',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['express'],
+        warnOnUnassignedImports: true,
+      },
+    ],
+    'import/newline-after-import': ['error', { count: 1 }],
+    'lines-around-comment': [
+      'error',
+      {
+        beforeBlockComment: true,
+        afterBlockComment: true,
+        beforeLineComment: true,
+        afterLineComment: true,
+        allowBlockStart: true,
+        allowBlockEnd: true,
+        allowObjectStart: true,
+        allowObjectEnd: true,
+        allowArrayStart: true,
+        allowArrayEnd: true,
+      },
+    ],
   },
   settings: {
     'import/resolver': {

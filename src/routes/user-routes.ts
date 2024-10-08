@@ -1,4 +1,5 @@
 import express from 'express';
+
 import { getUsers, createUser, getUserById } from '@/queries';
 
 const router = express.Router();
