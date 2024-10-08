@@ -1,9 +1,8 @@
 import express from 'express';
 
-import routes from '@/routes';
-
 import dotenv from 'dotenv';
 
+import routes from '@/routes';
 
 dotenv.config();
 
